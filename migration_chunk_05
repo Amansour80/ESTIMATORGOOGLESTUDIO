@@ -1,0 +1,100 @@
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Fire Safety', 'Clean Agent System (FM‑200/Novec)', 'FIRE-FM200', 'Cylinder pressure, room integrity, discharge controls. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and cylinder pressure check', 'quarterly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-FM200'
+UNION ALL SELECT id, 'Control panel and detection interface test', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-FM200'
+UNION ALL SELECT id, 'Room integrity and door seal test', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-FM200'
+UNION ALL SELECT id, 'Discharge nozzle and piping inspection', 'annual', 2.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-FM200'
+UNION ALL SELECT id, 'Full system test and cylinder weighing', 'annual', 3.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-FM200'
+
+
+-- 34. VESDA / Aspirating Smoke Detection
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Fire Safety', 'VESDA / Aspirating Smoke Detection', 'FIRE-PREALARM', 'Sampling points, filters, sensitivity. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Filter inspection and replacement', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-PREALARM'
+UNION ALL SELECT id, 'Sampling point airflow verification', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-PREALARM'
+UNION ALL SELECT id, 'Sensitivity and alarm threshold testing', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-PREALARM'
+UNION ALL SELECT id, 'Full system calibration and smoke test', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-PREALARM'
+
+
+-- 35. Sounder/Beacon/Strobe
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Fire Safety', 'Sounder/Beacon/Strobe', 'FIRE-BEACON', 'Audibility/visibility test. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Audibility and visibility test', 'semiannual', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-BEACON'
+UNION ALL SELECT id, 'Full operational test with FA panel', 'annual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-BEACON'
+
+
+-- 36. Fire Interface/Monitor Module
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Fire Safety', 'Fire Interface/Monitor Module', 'FIRE-INTMODULE', 'Loop mapping, cause‑&‑effect. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Loop mapping and communication test', 'semiannual', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-INTMODULE'
+UNION ALL SELECT id, 'Cause and effect verification', 'annual', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-INTMODULE'
+
+
+-- 37. Electromagnetic Door Holder
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Fire Safety', 'Electromagnetic Door Holder', 'FIRE-DOORHOLD', 'Release on alarm test. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Release on alarm test', 'quarterly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-DOORHOLD'
+UNION ALL SELECT id, 'Holding force and alignment check', 'annual', 0.75, 2 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-DOORHOLD'
+
+
+-- 38. Deluge/Pre‑Action Valve
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Fire Safety', 'Deluge/Pre‑Action Valve', 'FIRE-DELUGE', 'Trim valves, detection interface. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and pressure monitoring', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-DELUGE'
+UNION ALL SELECT id, 'Trim valve and solenoid valve test', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-DELUGE'
+UNION ALL SELECT id, 'Detection interface and activation test', 'semiannual', 2.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-DELUGE'
+UNION ALL SELECT id, 'Full trip test and flow verification', 'annual', 4.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-DELUGE'
+
+
+-- 39. External Hydrant System
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Fire Safety', 'External Hydrant System', 'FIRE-HYDRANT', 'Flow/pressure test; caps/threads. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection of hydrants and caps', 'semiannual', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-HYDRANT'
+UNION ALL SELECT id, 'Flow and pressure test', 'annual', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-HYDRANT'
+UNION ALL SELECT id, 'Thread condition and valve operation check', 'annual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'FIRE-HYDRANT'
+
+
+-- ============================================================================
+-- PLUMBING ASSETS (10)
+-- ============================================================================
+
+-- 40. Sewage Treatment Plant (STP)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Sewage Treatment Plant (STP)', 'PLB-STP', 'Blowers, clarifier, sludge, dosing. Skills: Plumbing Technician, Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and odor check', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-STP'
+UNION ALL SELECT id, 'Blower and aeration system inspection', 'monthly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-STP'
+UNION ALL SELECT id, 'Clarifier and settling tank cleaning', 'quarterly', 3.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-STP'
+UNION ALL SELECT id, 'Sludge disposal and chemical dosing check', 'quarterly', 2.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'PLB-STP'
+UNION ALL SELECT id, 'Water quality testing (BOD/COD/TSS)', 'semiannual', 2.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'PLB-STP'
+UNION ALL SELECT id, 'Full system service and valve inspection', 'annual', 6.0, 6 FROM industry_standard_asset_library WHERE standard_code = 'PLB-STP'
+
+
+-- 41. Sewage Lifting Station
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Sewage Lifting Station', 'PLB-LIFTSTN', 'Duplex pumps, level controls, backflow. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+

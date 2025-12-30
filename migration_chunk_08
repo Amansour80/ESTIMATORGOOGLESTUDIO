@@ -1,0 +1,23 @@
+
+-- 57. Water Feature / Fountain
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Special', 'Water Feature / Fountain', 'SPEC-FOUNTAIN', 'Nozzles, lighting, filtration. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and operation check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-FOUNTAIN'
+UNION ALL SELECT id, 'Nozzle cleaning and water quality test', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-FOUNTAIN'
+UNION ALL SELECT id, 'Pump and filtration system service', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-FOUNTAIN'
+UNION ALL SELECT id, 'Lighting and control system inspection', 'annual', 2.5, 4 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-FOUNTAIN'
+
+
+-- 58. Data Hall Leak Detection
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Special', 'Data Hall Leak Detection', 'SPEC-LEAKDET', 'Zoned/rope sensors, alarm mapping. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Zoned sensor and rope sensor testing', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-LEAKDET'
+UNION ALL SELECT id, 'Alarm mapping and notification test', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-LEAKDET'
+UNION ALL SELECT id, 'Full system calibration and coverage check', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-LEAKDET'
+

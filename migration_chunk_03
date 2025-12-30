@@ -1,0 +1,100 @@
+UNION ALL SELECT id, 'Full calibration and safety certification', 'annual', 4.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'SEC-XRAY'
+
+
+-- 17. Walk‑Through Metal Detector
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Security', 'Walk‑Through Metal Detector', 'SEC-METDET', 'Sensitivity calibration, coil checks. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Sensitivity calibration and test piece verification', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'SEC-METDET'
+UNION ALL SELECT id, 'Detection coil and zone testing', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'SEC-METDET'
+UNION ALL SELECT id, 'Full operational test and safety check', 'annual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'SEC-METDET'
+
+
+-- 18. Hydraulic/Pneumatic Bollard
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Security', 'Hydraulic/Pneumatic Bollard', 'SEC-BOLLARD', 'Pump/hydraulics, safety loops, controls. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Operation test and emergency stop check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'SEC-BOLLARD'
+UNION ALL SELECT id, 'Hydraulic pump and fluid level inspection', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'SEC-BOLLARD'
+UNION ALL SELECT id, 'Safety loop and impact detection test', 'semiannual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'SEC-BOLLARD'
+UNION ALL SELECT id, 'Full service including seal replacement', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'SEC-BOLLARD'
+
+
+-- ============================================================================
+-- HVAC ASSETS (15)
+-- ============================================================================
+
+-- 19. Cooling Tower
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Cooling Tower', 'HVAC-CT', 'Fans, drift eliminators, basin cleaning, anti‑legionella. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and basin cleaning', 'monthly', 2.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CT'
+UNION ALL SELECT id, 'Fan and motor inspection', 'monthly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CT'
+UNION ALL SELECT id, 'Drift eliminator and fill media cleaning', 'quarterly', 3.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CT'
+UNION ALL SELECT id, 'Water treatment and anti-legionella testing', 'quarterly', 1.5, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CT'
+UNION ALL SELECT id, 'Fan bearing lubrication and alignment', 'semiannual', 2.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CT'
+UNION ALL SELECT id, 'Complete tower cleaning and disinfection', 'annual', 6.0, 6 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CT'
+
+
+-- 20. Plate Heat Exchanger
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Plate Heat Exchanger', 'HVAC-HEX', 'Gasket inspection, flushing, approach temp trend. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and leak check', 'quarterly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HEX'
+UNION ALL SELECT id, 'Approach temperature and efficiency monitoring', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HEX'
+UNION ALL SELECT id, 'Gasket inspection and tightness check', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HEX'
+UNION ALL SELECT id, 'Plate cleaning and flushing', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HEX'
+
+
+-- 21. VAV Box / Controller
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'VAV Box / Controller', 'HVAC-VAV', 'Damper, actuator, airflow sensor calibration. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Damper operation and actuator test', 'quarterly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-VAV'
+UNION ALL SELECT id, 'Airflow sensor calibration', 'semiannual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-VAV'
+UNION ALL SELECT id, 'Controller setpoint verification and tuning', 'annual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-VAV'
+
+
+-- 22. Smoke Extract Fan
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Smoke Extract Fan', 'HVAC-SMOKEFAN', 'Fire mode test with FA interface. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and rotation test', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-SMOKEFAN'
+UNION ALL SELECT id, 'Fire mode activation test with FA interface', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-SMOKEFAN'
+UNION ALL SELECT id, 'Motor and bearing inspection', 'semiannual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-SMOKEFAN'
+UNION ALL SELECT id, 'Full operational test and damper interlock', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-SMOKEFAN'
+
+
+-- 23. Stairwell/Lobby Pressurization Fan
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Stairwell/Lobby Pressurization Fan', 'HVAC-PRESSFAN', 'Door drop test, pressure setpoint verification. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Pressure differential monitoring', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRESSFAN'
+UNION ALL SELECT id, 'Door drop test and pressure setpoint verification', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRESSFAN'
+UNION ALL SELECT id, 'Fan and motor inspection', 'semiannual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRESSFAN'
+UNION ALL SELECT id, 'Full fire mode test with building controls', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRESSFAN'
+
+
+-- 24. Car Park Jet Fan
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Car Park Jet Fan', 'HVAC-JETFAN', 'Run test, vibration check, CO control interface. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Run test and vibration check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-JETFAN'
+UNION ALL SELECT id, 'CO sensor interface and control logic test', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-JETFAN'
+UNION ALL SELECT id, 'Full system test and airflow verification', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-JETFAN'

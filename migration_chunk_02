@@ -1,0 +1,100 @@
+
+
+-- ============================================================================
+-- ELV/ICT ASSETS (7) - NEW CATEGORY
+-- ============================================================================
+
+-- 9. SMATV / IPTV Headend
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('ELV/ICT', 'SMATV / IPTV Headend', 'ELV-SMATV', 'Headend amplifiers, splitters, dish alignment. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Check signal levels and amplifier operation', 'quarterly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELV-SMATV'
+UNION ALL SELECT id, 'Dish alignment and LNB inspection', 'semiannual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELV-SMATV'
+UNION ALL SELECT id, 'Splitter and distribution testing', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELV-SMATV'
+
+
+-- 10. Structured Cabling & Rack (Passive)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('ELV/ICT', 'Structured Cabling & Rack (Passive)', 'ELV-STRUCTCAB', 'Patch panels, labeling, housekeeping. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and cable management', 'quarterly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELV-STRUCTCAB'
+UNION ALL SELECT id, 'Patch panel and labeling verification', 'semiannual', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELV-STRUCTCAB'
+UNION ALL SELECT id, 'Rack housekeeping and documentation update', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELV-STRUCTCAB'
+
+
+-- 11. Network Switch/Router/Wi‑Fi AP
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('ELV/ICT', 'Network Switch/Router/Wi‑Fi AP', 'ELV-NETWORK', 'Firmware, backups, link tests, RF survey spot-checks. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Firmware and security patch updates', 'quarterly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELV-NETWORK'
+UNION ALL SELECT id, 'Configuration backup verification', 'quarterly', 0.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELV-NETWORK'
+UNION ALL SELECT id, 'Link speed and port testing', 'semiannual', 1.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELV-NETWORK'
+UNION ALL SELECT id, 'RF coverage survey and heat map analysis', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELV-NETWORK'
+
+
+-- 12. Public Address / BGM System
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('ELV/ICT', 'Public Address / BGM System', 'ELV-PA-BGM', 'Amplifiers, speaker zoning, evacuation interface. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Speaker zone testing and sound quality check', 'monthly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PA-BGM'
+UNION ALL SELECT id, 'Amplifier inspection and output level check', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PA-BGM'
+UNION ALL SELECT id, 'Emergency evacuation interface test with FA', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PA-BGM'
+UNION ALL SELECT id, 'Full system test and coverage verification', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PA-BGM'
+
+
+-- 13. Master Clock System
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('ELV/ICT', 'Master Clock System', 'ELV-MASTERCLK', 'Time sync source, slave clock checks. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Time synchronization source verification', 'quarterly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELV-MASTERCLK'
+UNION ALL SELECT id, 'Slave clock display and accuracy check', 'semiannual', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELV-MASTERCLK'
+UNION ALL SELECT id, 'Battery backup and GPS signal test', 'annual', 1.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELV-MASTERCLK'
+
+
+-- 14. Parking Management / ANPR
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('ELV/ICT', 'Parking Management / ANPR', 'ELV-PARKMGT', 'Ticketing, barriers interface, loop detectors. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Camera and ANPR recognition test', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PARKMGT'
+UNION ALL SELECT id, 'Barrier and ticketing interface check', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PARKMGT'
+UNION ALL SELECT id, 'Loop detector sensitivity and vehicle detection', 'semiannual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PARKMGT'
+UNION ALL SELECT id, 'Full system test and database backup', 'annual', 2.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELV-PARKMGT'
+
+
+-- 15. Intercom / Video Door Phone
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('ELV/ICT', 'Intercom / Video Door Phone', 'ELV-INTERCOM', 'Handsets, door stations, PSU checks. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Handset and door station functionality test', 'quarterly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELV-INTERCOM'
+UNION ALL SELECT id, 'Video quality and camera adjustment', 'semiannual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELV-INTERCOM'
+UNION ALL SELECT id, 'PSU and wiring inspection', 'annual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELV-INTERCOM'
+
+
+-- ============================================================================
+-- SECURITY ASSETS (3)
+-- ============================================================================
+
+-- 16. X‑Ray Baggage Scanner
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Security', 'X‑Ray Baggage Scanner', 'SEC-XRAY', 'Airport/mall security; radiation safety checks. Skills: ELV Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Daily self-test and image quality check', 'monthly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'SEC-XRAY'
+UNION ALL SELECT id, 'Radiation safety and leakage test', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'SEC-XRAY'
+UNION ALL SELECT id, 'Roller and conveyor belt inspection', 'quarterly', 1.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'SEC-XRAY'
+UNION ALL SELECT id, 'X-ray tube and generator performance test', 'semiannual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'SEC-XRAY'

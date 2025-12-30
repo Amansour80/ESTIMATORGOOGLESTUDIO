@@ -1,0 +1,244 @@
+Category,Abbreviation,Expansions
+HVAC & Ventilation,AHU,Air Handling Unit; Air-Handling Unit; Air Handler
+HVAC & Ventilation,100% FA AHU,100% Fresh Air Air Handling Unit; Fresh Air Handling Unit
+HVAC & Ventilation,FAHU,Fresh Air Handling Unit; Fresh Air Unit; FA Unit
+HVAC & Ventilation,FAU,Fresh Air Unit; Fresh Air Handling Unit
+HVAC & Ventilation,MAHU,Mixed Air Handling Unit; Air Handling Unit
+HVAC & Ventilation,PAU,Pre-Air Unit; Pre-Conditioning Air Unit
+HVAC & Ventilation,FCU,Fan Coil Unit; FC Unit
+HVAC & Ventilation,4-PIPE FCU,Four-Pipe Fan Coil Unit; 4 Pipe FCU
+HVAC & Ventilation,2-PIPE FCU,Two-Pipe Fan Coil Unit; 2 Pipe FCU
+HVAC & Ventilation,VAV,Variable Air Volume Box; VAV Box
+HVAC & Ventilation,VAV BOX,Variable Air Volume Box
+HVAC & Ventilation,CAV,Constant Air Volume Box
+HVAC & Ventilation,VRF,Variable Refrigerant Flow
+HVAC & Ventilation,VRV,Variable Refrigerant Volume; Variable Refrigerant Flow
+HVAC & Ventilation,DX UNIT,Direct Expansion Unit; DX Air Conditioner
+HVAC & Ventilation,DX SPLIT,DX Split Unit; Ducted Split Unit
+HVAC & Ventilation,DUCTED SPLIT,Ducted Split AC; DX Ducted Split
+HVAC & Ventilation,CASSETTE AC,Ceiling Cassette AC; Cassette Air Conditioner
+HVAC & Ventilation,WINDOW AC,Window AC Unit; Window Air Conditioner
+HVAC & Ventilation,SPLIT AC,Split AC Unit; Hi-Wall Split AC
+HVAC & Ventilation,PACKAGE UNIT,Packaged Air Conditioner; Rooftop Package Unit; RTU
+HVAC & Ventilation,RTU,Rooftop Unit; Rooftop Package Unit; Package Unit
+HVAC & Ventilation,PAC,Package Air Conditioner; Package Unit
+HVAC & Ventilation,CU,Condensing Unit; Outdoor Unit
+HVAC & Ventilation,ODU,Outdoor Unit; Condensing Unit
+HVAC & Ventilation,IDU,Indoor Unit; Evaporator Unit
+HVAC & Ventilation,ERV,Energy Recovery Ventilator; Heat Recovery Ventilator; HRV; HRW
+HVAC & Ventilation,HRV,Heat Recovery Ventilator
+HVAC & Ventilation,HRW,Heat Recovery Wheel; Energy Recovery Wheel
+HVAC & Ventilation,PHE,Plate Heat Exchanger; Heat Exchanger
+HVAC & Ventilation,HEX,Plate Heat Exchanger; Heat Exchanger
+HVAC & Ventilation,CT,Cooling Tower
+HVAC & Ventilation,COOLING TOWER,Cooling Tower
+HVAC & Ventilation,CRAC,Precision AC; Computer Room Air Conditioner; CRAC Unit
+HVAC & Ventilation,CRAH,Precision AC; Computer Room Air Handler; CRAH Unit
+HVAC & Ventilation,ECONOMIZER,Economizer System; Fresh Air Economizer
+HVAC & Ventilation,JET FAN,Car Park Jet Fan; Jetfan
+HVAC & Ventilation,SMOKE FAN,Smoke Extract Fan; SEF
+HVAC & Ventilation,PRESSURIZATION FAN,Stairwell Pressurization Fan; Lobby Pressurization Fan
+HVAC & Ventilation,PRESS FAN,Pressurization Fan; Stairwell Pressurization Fan
+HVAC & Ventilation,EXHAUST FAN,Exhaust Fan; Toilet Exhaust Fan; Kitchen Exhaust Fan
+HVAC & Ventilation,SUPPLY FAN,Supply Air Fan; SAF
+HVAC & Ventilation,RETURN FAN,Return Air Fan; RAF
+HVAC & Ventilation,VCD,Volume Control Damper; Motorized Volume Control Damper
+HVAC & Ventilation,FSD,Fire Smoke Damper; Smoke/Fire Damper
+HVAC & Ventilation,SMOKE DAMPER,Smoke Damper; Fire Smoke Damper
+HVAC & Ventilation,MOTORISED DAMPER,Motorized Damper; Volume Control Damper
+HVAC & Ventilation,FIRE DAMPER,Fire Damper
+HVAC & Ventilation,LOUVRE,Air Louvre; Weather Louver; Sand Trap Louver
+HVAC & Ventilation,SAND TRAP,Sand Trap Louver
+HVAC & Ventilation,AIR CURTAIN,Air Curtain; Air Door
+HVAC & Ventilation,CO2 MONITOR,Carbon Dioxide Monitor; CO2 Sensor
+HVAC & Ventilation,TEMP SENSOR,Temperature Sensor
+HVAC & Ventilation,RH SENSOR,Humidity Sensor; RH Sensor
+HVAC & Ventilation,DP SENSOR,Differential Pressure Sensor
+HVAC & Ventilation,VFD,Variable Frequency Drive
+HVAC & Ventilation,VSD,Variable Speed Drive
+HVAC & Ventilation,CHW,Chilled Water System
+HVAC & Ventilation,CHWP,Chilled Water Pump
+HVAC & Ventilation,CWP,Condenser Water Pump
+HVAC & Ventilation,CHEM DOSING,Chemical Dosing System; Chilled Water Chemical Dosing
+HVAC & Ventilation,ECON,Economizer System
+HVAC & Ventilation,KITCHEN ECOLOGY,Kitchen Ecology Unit; ESP Unit; Ozone Unit
+HVAC & Ventilation,ESP,Electrostatic Precipitator; Kitchen Ecology Unit
+HVAC & Ventilation,HUMIDIFIER,Steam Humidifier; Canister Humidifier
+HVAC & Ventilation,DEHUMIDIFIER,Dehumidifier
+Electrical & Power,UPS,Uninterruptible Power Supply; UPS System
+Electrical & Power,UPS BATTERY,UPS Battery Bank; VRLA Battery Bank
+Electrical & Power,VRLA,VRLA Battery; UPS Battery
+Electrical & Power,ATS,Automatic Transfer Switch
+Electrical & Power,AMF,Automatic Mains Failure Panel; AMF Panel
+Electrical & Power,SYNC PANEL,Generator Synchronizing Panel; Gen-set Synchronizing Panel
+Electrical & Power,GENERATOR,Diesel Generator; Emergency Generator; Genset; Gen-set; DG Set
+Electrical & Power,DG,Diesel Generator; DG Set
+Electrical & Power,DAY TANK,Diesel Day Tank; Fuel Day Tank
+Electrical & Power,FUEL TRANSFER PUMP,Diesel Fuel Transfer Pump
+Electrical & Power,FUEL POLISHING,Fuel Polishing Unit
+Electrical & Power,MDB,Main Distribution Board; Main Switchboard; MSB; LV Panel
+Electrical & Power,MSB,Main Switchboard; Main LV Panel
+Electrical & Power,LVSG,Low Voltage Switchgear; LV Switchgear
+Electrical & Power,SMDB,Sub Main Distribution Board; Sub-Main Distribution Board
+Electrical & Power,DB,Distribution Board; Panel Board; Panelboard
+Electrical & Power,PANEL BOARD,Panelboard; Distribution Board
+Electrical & Power,FEEDER PILLAR,Feeder Pillar; Outdoor LV Panel
+Electrical & Power,RMU,Ring Main Unit; MV Switchgear
+Electrical & Power,MV SWGR,Medium Voltage Switchgear; MV Switchgear
+Electrical & Power,TRANSFORMER,Transformer; Power Transformer
+Electrical & Power,CAPACITOR BANK,Capacitor Bank; Power Factor Correction Bank; PFC Bank
+Electrical & Power,PFI,Power Factor Improvement Bank; Capacitor Bank
+Electrical & Power,LPS,Lightning Protection System; Lightning Protection
+Electrical & Power,SPD,Surge Protection Device; Surge Arrester
+Electrical & Power,EARTHING,Earthing System; Grounding System
+Electrical & Power,RCD,Residual Current Device
+Electrical & Power,RCCB,Residual Current Circuit Breaker
+Electrical & Power,MCB,Miniature Circuit Breaker
+Electrical & Power,MCCB,Molded Case Circuit Breaker
+Electrical & Power,ACB,Air Circuit Breaker
+Electrical & Power,CONTACTOR,Contactor
+Electrical & Power,RELAY,Protection Relay; Control Relay
+Electrical & Power,LIGHTING,Lighting Fixture; Luminaires; Light Fittings
+Electrical & Power,EM LIGHT,Emergency Light; Emergency Lighting
+Electrical & Power,EXIT SIGN,Exit Light; Emergency Exit Light
+Electrical & Power,SOCKET,Socket Outlet; Electrical Outlet; Power Point; Receptacle
+Electrical & Power,SWITCH,Light Switch; Switch
+Electrical & Power,EV CHARGER,EV Charging Station; EVSE
+Electrical & Power,PV,Solar PV System; Photovoltaic System
+Electrical & Power,PV INVERTER,Solar PV Inverter; String Inverter; Central Inverter
+Electrical & Power,SCB,PV String Combiner Box
+Fire Safety,FAS,Fire Alarm System
+Fire Safety,FACP,Fire Alarm Control Panel; Fire Alarm Panel
+Fire Safety,REPEATER PANEL,Fire Alarm Repeater Panel
+Fire Safety,MCP,Manual Call Point; Break Glass Unit; Call Point
+Fire Safety,MCB (CALL POINT),Manual Call Point; Break Glass
+Fire Safety,SOUNDER,Fire Alarm Sounder; Sounder Beacon; Strobe
+Fire Safety,BEACON,Visual Alarm Device; Sounder Beacon
+Fire Safety,DETECTOR,Smoke Detector; Heat Detector; CO Detector; Beam Detector
+Fire Safety,SMOKE DETECTOR,Smoke Detector; Photoelectric Smoke Detector
+Fire Safety,HEAT DETECTOR,Heat Detector; Rate-of-Rise Heat Detector; Fixed Temperature Heat Detector
+Fire Safety,BEAM DETECTOR,Beam Smoke Detector; Linear Beam Detector
+Fire Safety,CO DETECTOR,Carbon Monoxide Detector
+Fire Safety,GAS DETECTOR,Gas Leak Detector; LPG Detector
+Fire Safety,SPRINKLER,Sprinkler System; Automatic Sprinkler
+Fire Safety,PREACTION,Pre-Action Valve; Preaction Valve
+Fire Safety,DELUGE,Deluge Valve
+Fire Safety,WET RISER,Wet Riser System
+Fire Safety,DRY RISER,Dry Riser System
+Fire Safety,FIRE PUMP,Fire Pump; Main Fire Pump
+Fire Safety,JOCKEY PUMP,Jockey Pump
+Fire Safety,DIESEL FIRE PUMP,Diesel Fire Pump
+Fire Safety,ELECTRIC FIRE PUMP,Electric Fire Pump
+Fire Safety,FHC,Fire Hose Cabinet; Fire Hose Reel Cabinet
+Fire Safety,HOSE REEL,Fire Hose Reel
+Fire Safety,HYDRANT,Fire Hydrant; External Hydrant
+Fire Safety,EVA,Emergency Voice Alarm; Voice Evacuation System
+Fire Safety,FM200,FM-200 Clean Agent System; Clean Agent System
+Fire Safety,NOVEC,Novec 1230 Clean Agent System; Clean Agent System
+Fire Safety,CO2 SUPPRESSION,CO2 Fire Suppression System
+Fire Safety,VESDA,Aspirating Smoke Detection; ASD
+Fire Safety,ISOLATOR,Loop Isolator Module
+Fire Safety,I/O MODULE,Input Output Module; Interface Module; Monitor Module
+Plumbing & Water,PUMP,Water Pump; Pump
+Plumbing & Water,BOOSTER PUMP,Water Booster Pump; Booster Set; Hydropneumatic Pump
+Plumbing & Water,TRANSFER PUMP,Transfer Pump; Water Transfer Pump
+Plumbing & Water,CIRC PUMP,Hot Water Circulation Pump; DHW Circulation Pump
+Plumbing & Water,SUBMERSIBLE PUMP,Submersible Pump
+Plumbing & Water,SEWAGE PUMP,Sewage Pump; Sewage Ejector Pump
+Plumbing & Water,STORM PUMP,Storm Water Pump; Drainage Pump
+Plumbing & Water,SUMP PUMP,Sump Pump
+Plumbing & Water,CHW PUMP,Chilled Water Pump
+Plumbing & Water,CWP,Condenser Water Pump
+Plumbing & Water,TANK,Water Storage Tank; GRP Water Tank
+Plumbing & Water,GRP TANK,GRP Water Tank; Fiberglass Water Tank
+Plumbing & Water,WATER HEATER,Electric Water Heater; Gas Water Heater
+Plumbing & Water,CALORIFIER,Hot Water Calorifier; Storage Water Heater
+Plumbing & Water,TMV,Thermostatic Mixing Valve
+Plumbing & Water,PRV,Pressure Reducing Valve
+Plumbing & Water,STP,Sewage Treatment Plant
+Plumbing & Water,LIFTING STATION,Sewage Lifting Station; Lift Station
+Plumbing & Water,RO,Reverse Osmosis Plant; RO Plant
+Plumbing & Water,SOFTENER,Water Softener; Ion Exchange Softener
+Plumbing & Water,GREASE TRAP,Grease Interceptor; Grease Separator
+Plumbing & Water,OIL SEPARATOR,Oil Interceptor; Oil Separator
+Plumbing & Water,WQM,Water Quality Monitor; Chlorine/PH/TDS Monitor
+Plumbing & Water,LEAK DETECTION,Water Leak Detection System; Flood Detection System
+Security / ELV / ICT,CCTV,CCTV Camera
+Security / ELV / ICT,IP CAMERA,IP CCTV Camera; Network Camera
+Security / ELV / ICT,ANALOG CAMERA,Analog CCTV Camera
+Security / ELV / ICT,PTZ,PTZ Camera; Pan Tilt Zoom Camera
+Security / ELV / ICT,NVR,Network Video Recorder; CCTV NVR
+Security / ELV / ICT,DVR,Digital Video Recorder; CCTV DVR
+Security / ELV / ICT,VMS,Video Management System
+Security / ELV / ICT,ACS,Access Control System; Access Control Panel
+Security / ELV / ICT,READER,Card Reader; Access Card Reader; RFID Reader; Biometric Reader
+Security / ELV / ICT,KEYPAD,Access Keypad
+Security / ELV / ICT,EM LOCK,Electromagnetic Lock; Mag Lock
+Security / ELV / ICT,DOOR STRIKE,Electric Strike; Door Strike
+Security / ELV / ICT,MAG CONTACT,Magnetic Door Contact; Door Contact
+Security / ELV / ICT,PIR,PIR Detector; Motion Detector
+Security / ELV / ICT,TURNSTILE,Turnstile
+Security / ELV / ICT,TRIPOD TURNSTILE,Tripod Turnstile
+Security / ELV / ICT,FLAP BARRIER,Speed Gate; Flap Barrier
+Security / ELV / ICT,BOOM BARRIER,Vehicle Boom Barrier; Gate Barrier
+Security / ELV / ICT,ANPR,Automatic Number Plate Recognition; LPR System; Parking Management System
+Security / ELV / ICT,LPR,License Plate Recognition; ANPR System
+Security / ELV / ICT,PA,Public Address System; PA/BGM
+Security / ELV / ICT,BGM,Background Music System; PA/BGM
+Security / ELV / ICT,PAGA,Public Address & General Alarm System
+Security / ELV / ICT,INTERCOM,Intercom System; Video Door Phone
+Security / ELV / ICT,SMATV,Satellite Master Antenna TV; SMATV Headend
+Security / ELV / ICT,IPTV,IPTV Headend; IPTV System
+Security / ELV / ICT,NETWORK RACK,Network Rack; IT Rack
+Security / ELV / ICT,SWITCH (NETWORK),Network Switch; Ethernet Switch
+Security / ELV / ICT,ROUTER,Network Router
+Security / ELV / ICT,WAP,Wi‑Fi Access Point; Wireless AP; AP
+Security / ELV / ICT,AP,Wi‑Fi Access Point; Wireless AP
+Security / ELV / ICT,LAN,Structured Cabling; Network Cabling
+Security / ELV / ICT,FO,Fiber Optic Cable; Fiber Network
+Security / ELV / ICT,FOC,Fiber Optic Cable; Fiber Network
+Security / ELV / ICT,ODF,Optical Distribution Frame
+Security / ELV / ICT,PABX,Telephone System; PBX; IP-PBX
+Security / ELV / ICT,PBX,Telephone System; PABX; IP-PBX
+Security / ELV / ICT,MASTER CLOCK,Master Clock System
+Security / ELV / ICT,BMS,Building Management System; BAS; Building Automation System
+Security / ELV / ICT,BAS,Building Automation System; Building Management System
+Security / ELV / ICT,DDC,Direct Digital Controller; DDC Controller
+Security / ELV / ICT,HMI,Human Machine Interface; BMS Operator Workstation
+Security / ELV / ICT,OWS,Operator Workstation; BMS Operator Workstation
+Security / ELV / ICT,SCADA,SCADA System
+Security / ELV / ICT,BACNET,BACnet Communication
+Security / ELV / ICT,MODBUS,Modbus Communication
+Vertical Transport & Facade,LIFT,Lift; Elevator
+Vertical Transport & Facade,ELEVATOR,Lift; Elevator
+Vertical Transport & Facade,MRL LIFT,Machine Room-Less Lift; MRL Elevator
+Vertical Transport & Facade,ESCALATOR,Escalator; Esclator
+Vertical Transport & Facade,TRAVELATOR,Travelator; Moving Walk
+Vertical Transport & Facade,DUMBWAITER,Dumbwaiter
+Vertical Transport & Facade,FIREMAN LIFT,Fire Fighting Lift; Fireman Lift
+Vertical Transport & Facade,PLATFORM LIFT,Platform Lift
+Vertical Transport & Facade,SERVICE LIFT,Service Lift; Goods Lift
+Vertical Transport & Facade,BMU,Building Maintenance Unit; Cradle; Monorail
+Doors & Gates / Facade,AUTOMATIC DOOR,Automatic Sliding Door; Auto Door
+Doors & Gates / Facade,SLIDING DOOR,Automatic Sliding Door; Auto Sliding Door
+Doors & Gates / Facade,SWING DOOR,Automatic Swing Door
+Doors & Gates / Facade,ROLLING SHUTTER,Rolling Shutter Door; Roller Shutter
+Doors & Gates / Facade,SECTIONAL DOOR,Sectional Overhead Door
+Doors & Gates / Facade,GATE,Automatic Gate; Gate
+Doors & Gates / Facade,GARAGE DOOR,Garage Door; Sectional Door
+Doors & Gates / Facade,BOLLARD,Hydraulic Bollard; Automatic Bollard
+Utilities & Gas,COMP AIR,Compressed Air System; Air Compressor
+Utilities & Gas,AIR COMPRESSOR,Air Compressor
+Utilities & Gas,AIR DRYER,Compressed Air Dryer; Refrigerant Dryer; Desiccant Dryer
+Utilities & Gas,AIR RECEIVER,Compressed Air Receiver; Air Tank
+Utilities & Gas,LPG,LPG System; Gas System
+Utilities & Gas,VAPORIZER,LPG Vaporizer
+Utilities & Gas,GAS DETECTOR,Gas Leak Detector; LPG Detector
+Special Systems,POOL,Swimming Pool System; Pool Filtration System
+Special Systems,FOUNTAIN,Water Feature; Fountain
+Special Systems,JACUZZI,Spa Pool; Jacuzzi
+Special Systems,KITCHEN HOOD,Commercial Kitchen Hood; Extract Hood
+Special Systems,KITCHEN ECOLOGY,Kitchen Ecology Unit; ESP Unit; Ozone Unit
+Special Systems,LEAK DETECTION,Leak Detection System; Water Leak Detection
+Special Systems,X-RAY SCANNER,X-Ray Baggage Scanner
+Special Systems,WTMD,Walk-Through Metal Detector; Metal Detector Gate

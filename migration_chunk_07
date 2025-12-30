@@ -1,0 +1,100 @@
+-- LIFTS ASSETS (2)
+-- ============================================================================
+
+-- 50. Fireman/Fire‑Fighting Lift
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Lifts', 'Fireman/Fire‑Fighting Lift', 'LIFT-FIREMAN', 'Fire recall, water ingress protect. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Fire recall mode activation test', 'monthly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'LIFT-FIREMAN'
+UNION ALL SELECT id, 'Water ingress protection inspection', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'LIFT-FIREMAN'
+UNION ALL SELECT id, 'Emergency communication and lighting test', 'semiannual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'LIFT-FIREMAN'
+UNION ALL SELECT id, 'Full operational test and statutory inspection', 'annual', 4.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'LIFT-FIREMAN'
+
+
+-- 51. Dumbwaiter
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Lifts', 'Dumbwaiter', 'LIFT-DUMB', 'Guides, interlocks, balance. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Guide rail and roller inspection', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'LIFT-DUMB'
+UNION ALL SELECT id, 'Interlock and safety device testing', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'LIFT-DUMB'
+UNION ALL SELECT id, 'Cable balance and full operational test', 'annual', 2.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'LIFT-DUMB'
+
+
+-- ============================================================================
+-- FACADE ASSETS (1) - NEW CATEGORY
+-- ============================================================================
+
+-- 52. Building Maintenance Unit (Cradle/Monorail)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Facade', 'Building Maintenance Unit (Cradle/Monorail)', 'FACADE-BMU', 'Travel rails, hoist, safety devices. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and operation test', 'monthly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'FACADE-BMU'
+UNION ALL SELECT id, 'Travel rail and track condition check', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'FACADE-BMU'
+UNION ALL SELECT id, 'Hoist and wire rope inspection', 'quarterly', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'FACADE-BMU'
+UNION ALL SELECT id, 'Safety device and emergency stop testing', 'semiannual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'FACADE-BMU'
+UNION ALL SELECT id, 'Full statutory examination (LOLER)', 'annual', 5.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'FACADE-BMU'
+
+
+-- ============================================================================
+-- UTILITIES ASSETS (3) - NEW CATEGORY
+-- ============================================================================
+
+-- 53. Diesel Day Tank & Transfer System
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Utilities', 'Diesel Day Tank & Transfer System', 'FUEL-DAYTANK', 'Leak tests, polishing unit, level switches. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and leak detection', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'FUEL-DAYTANK'
+UNION ALL SELECT id, 'Level switch and alarm testing', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'FUEL-DAYTANK'
+UNION ALL SELECT id, 'Fuel polishing unit operation check', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'FUEL-DAYTANK'
+UNION ALL SELECT id, 'Tank cleaning and integrity test', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'FUEL-DAYTANK'
+
+
+-- 54. Compressed Air System & Dryer
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Utilities', 'Compressed Air System & Dryer', 'UTIL-COMPAIR', 'Receivers, auto drain, dryer dew point. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Receiver pressure and auto drain check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'UTIL-COMPAIR'
+UNION ALL SELECT id, 'Compressor oil and belt inspection', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'UTIL-COMPAIR'
+UNION ALL SELECT id, 'Dryer dew point test and filter replacement', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'UTIL-COMPAIR'
+UNION ALL SELECT id, 'Full system service and pressure test', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'UTIL-COMPAIR'
+
+
+-- 55. LPG System (Tank/Manifold/Detectors)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Utilities', 'LPG System (Tank/Manifold/Detectors)', 'GAS-LPG', 'Regulators, leak tests, gas detection. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and leak detection', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'GAS-LPG'
+UNION ALL SELECT id, 'Gas detector calibration and alarm test', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'GAS-LPG'
+UNION ALL SELECT id, 'Regulator and pressure test', 'semiannual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'GAS-LPG'
+UNION ALL SELECT id, 'Full system integrity test and valve inspection', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'GAS-LPG'
+UNION ALL SELECT id, 'Tank pressure relief valve testing', 'annual', 1.5, 5 FROM industry_standard_asset_library WHERE standard_code = 'GAS-LPG'
+
+
+-- ============================================================================
+-- SPECIAL ASSETS (3) - NEW CATEGORY
+-- ============================================================================
+
+-- 56. Swimming Pool System (Pumps/Filters/Dosing)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Special', 'Swimming Pool System (Pumps/Filters/Dosing)', 'SPEC-POOL', 'Backwash, dosing, ORP/pH control. Skills: Kitchen Equipment Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Water chemistry testing and adjustment', 'weekly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-POOL'
+UNION ALL SELECT id, 'Pump and filter backwash operation', 'weekly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-POOL'
+UNION ALL SELECT id, 'Chemical dosing system calibration', 'quarterly', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-POOL'
+UNION ALL SELECT id, 'ORP and pH probe calibration', 'quarterly', 1.5, 4 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-POOL'
+UNION ALL SELECT id, 'Full system service and deep cleaning', 'annual', 6.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'SPEC-POOL'
+

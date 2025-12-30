@@ -1,0 +1,100 @@
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and alarm test', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-LIFTSTN'
+UNION ALL SELECT id, 'Duplex pump alternation and operation check', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-LIFTSTN'
+UNION ALL SELECT id, 'Level control and float switch testing', 'semiannual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-LIFTSTN'
+UNION ALL SELECT id, 'Pump service and backflow preventer test', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'PLB-LIFTSTN'
+
+
+-- 42. RO Plant / Water Filtration
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'RO Plant / Water Filtration', 'PLB-RO', 'RO membranes, prefilters, conductivity. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and pressure monitoring', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-RO'
+UNION ALL SELECT id, 'Pre-filter replacement and SDI test', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-RO'
+UNION ALL SELECT id, 'Conductivity and TDS monitoring', 'quarterly', 0.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-RO'
+UNION ALL SELECT id, 'RO membrane cleaning and performance test', 'semiannual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'PLB-RO'
+UNION ALL SELECT id, 'Full system service and membrane replacement', 'annual', 4.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'PLB-RO'
+
+
+-- 43. Water Softener / Ion Exchange
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Water Softener / Ion Exchange', 'PLB-SOFTENER', 'Brine tank, regeneration cycle. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and resin level check', 'quarterly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOFTENER'
+UNION ALL SELECT id, 'Brine tank and salt level inspection', 'quarterly', 0.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOFTENER'
+UNION ALL SELECT id, 'Regeneration cycle test', 'semiannual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOFTENER'
+UNION ALL SELECT id, 'Resin bed cleaning and valve service', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOFTENER'
+
+
+-- 44. Irrigation Pump & Controller
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Irrigation Pump & Controller', 'PLB-IRRIG', 'Timers, valves, filters. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Timer and controller programming check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-IRRIG'
+UNION ALL SELECT id, 'Valve operation and zone testing', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-IRRIG'
+UNION ALL SELECT id, 'Filter cleaning and pump inspection', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-IRRIG'
+
+
+-- 45. Solar Water Heater System
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Solar Water Heater System', 'PLB-SOLARWH', 'Panels, glycol loop, PRV, anodes. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Panel cleaning and inspection', 'quarterly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOLARWH'
+UNION ALL SELECT id, 'Glycol loop pressure and concentration check', 'semiannual', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOLARWH'
+UNION ALL SELECT id, 'PRV and temperature sensor testing', 'semiannual', 1.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOLARWH'
+UNION ALL SELECT id, 'Anode inspection and full system service', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'PLB-SOLARWH'
+
+
+-- 46. Oil Interceptor / Separator
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Oil Interceptor / Separator', 'PLB-OILSEPCP', 'Car parks/workshops; skimming & cleaning. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and oil skimming', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-OILSEPCP'
+UNION ALL SELECT id, 'Sludge removal and cleaning', 'quarterly', 2.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-OILSEPCP'
+UNION ALL SELECT id, 'Full cleaning and structural inspection', 'annual', 3.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-OILSEPCP'
+
+
+-- 47. Flood/Leak Detection System
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Flood/Leak Detection System', 'PLB-FLOOD', 'Cables/sensors, controller tests. Skills: Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Sensor functionality and alarm test', 'quarterly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-FLOOD'
+UNION ALL SELECT id, 'Cable and probe inspection', 'semiannual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-FLOOD'
+UNION ALL SELECT id, 'Controller test and battery backup check', 'annual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-FLOOD'
+
+
+-- 48. Water Quality Monitor (Cl/PH/TDS)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'Water Quality Monitor (Cl/PH/TDS)', 'PLB-WQM', 'Sensor calibration, log trending. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Sensor cleaning and calibration', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-WQM'
+UNION ALL SELECT id, 'Data logging and trend analysis', 'quarterly', 0.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-WQM'
+UNION ALL SELECT id, 'Probe replacement and full calibration', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-WQM'
+
+
+-- 49. DHW Circulation Pump
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Plumbing', 'DHW Circulation Pump', 'PLB-WHCPUMP', 'Temperature setpoint, NRV check. Skills: Plumbing Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Operation check and temperature verification', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'PLB-WHCPUMP'
+UNION ALL SELECT id, 'Non-return valve inspection', 'semiannual', 0.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'PLB-WHCPUMP'
+UNION ALL SELECT id, 'Pump service and seal replacement', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'PLB-WHCPUMP'
+
+
+-- ============================================================================

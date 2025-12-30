@@ -1,0 +1,100 @@
+
+
+-- 25. Energy Recovery Ventilator / HRW
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Energy Recovery Ventilator / HRW', 'HVAC-ERV', 'Wheel/bypass damper, belt, filters. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Filter inspection and replacement', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ERV'
+UNION ALL SELECT id, 'Heat recovery wheel and seal inspection', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ERV'
+UNION ALL SELECT id, 'Bypass damper operation test', 'quarterly', 0.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ERV'
+UNION ALL SELECT id, 'Belt and bearing inspection', 'annual', 2.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ERV'
+
+
+-- 26. Humidifier / Dehumidifier
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Humidifier / Dehumidifier', 'HVAC-HUMID', 'Steam/canister replacement, RH control. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and operation check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HUMID'
+UNION ALL SELECT id, 'Steam canister or pad replacement', 'quarterly', 1.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HUMID'
+UNION ALL SELECT id, 'RH control calibration', 'semiannual', 1.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HUMID'
+UNION ALL SELECT id, 'Full system service and water treatment check', 'annual', 2.5, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-HUMID'
+
+
+-- 27. Kitchen Ecology Unit (ESP/Ozone)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Kitchen Ecology Unit (ESP/Ozone)', 'HVAC-ECOLOGY', 'Cell cleaning, ozone module, DP gauges. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and odor check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ECOLOGY'
+UNION ALL SELECT id, 'ESP cell cleaning', 'monthly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ECOLOGY'
+UNION ALL SELECT id, 'Ozone module inspection and output test', 'quarterly', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ECOLOGY'
+UNION ALL SELECT id, 'Differential pressure gauge calibration', 'semiannual', 1.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ECOLOGY'
+UNION ALL SELECT id, 'Full system cleaning and filter replacement', 'annual', 4.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-ECOLOGY'
+
+
+-- 28. Motorized Volume Control Damper (VCD)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Motorized Volume Control Damper (VCD)', 'HVAC-DAMPER', 'Actuator stroke test, position feedback. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Actuator stroke test and position feedback', 'quarterly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-DAMPER'
+UNION ALL SELECT id, 'Full operational test and calibration', 'annual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-DAMPER'
+
+
+-- 29. Smoke/Fire Smoke Damper
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Smoke/Fire Smoke Damper', 'HVAC-SMKDAMP', 'Fail‑safe close test with FA system. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Fail-safe close test with FA system', 'quarterly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-SMKDAMP'
+UNION ALL SELECT id, 'Fusible link and actuator inspection', 'semiannual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-SMKDAMP'
+UNION ALL SELECT id, 'Full functional test and blade seal inspection', 'annual', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-SMKDAMP'
+
+
+-- 30. Condensate Pump
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Condensate Pump', 'HVAC-CONDSP', 'Float switch, drain cleaning. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Float switch and operation test', 'monthly', 0.25, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CONDSP'
+UNION ALL SELECT id, 'Drain pan and line cleaning', 'annual', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CONDSP'
+
+
+-- 31. Chilled Water Chemical Dosing System
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Chilled Water Chemical Dosing System', 'HVAC-CHEMDOSE', 'Biocide/corrosion inhibitor dosing, test kit logs. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Dosing pump operation and flow check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CHEMDOSE'
+UNION ALL SELECT id, 'Chemical level and concentration test', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CHEMDOSE'
+UNION ALL SELECT id, 'System water sampling and treatment log', 'quarterly', 1.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CHEMDOSE'
+UNION ALL SELECT id, 'Pump calibration and full system check', 'annual', 2.5, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-CHEMDOSE'
+
+
+-- 32. Precision AC (CRAC/CRAH)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('HVAC', 'Precision AC (CRAC/CRAH)', 'HVAC-PRAC', 'Data rooms; filter, coil, compressor logs. Skills: AC Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Filter inspection and replacement', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRAC'
+UNION ALL SELECT id, 'Check operating parameters and alarms', 'monthly', 0.5, 2 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRAC'
+UNION ALL SELECT id, 'Coil cleaning and refrigerant check', 'quarterly', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRAC'
+UNION ALL SELECT id, 'Compressor and fan motor inspection', 'semiannual', 2.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRAC'
+UNION ALL SELECT id, 'Full system service and controls calibration', 'annual', 4.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'HVAC-PRAC'
+
+
+-- ============================================================================
+-- FIRE SAFETY ASSETS (7)
+-- ============================================================================
+
+-- 33. Clean Agent System (FM‑200/Novec)

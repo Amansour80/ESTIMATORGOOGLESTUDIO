@@ -1,0 +1,100 @@
+-- ELECTRICAL ASSETS (8)
+-- ============================================================================
+
+-- 1. MV Switchgear (11kV/33kV)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'MV Switchgear (11kV/33kV)', 'ELEC-MVSWGR', 'Incoming utility/transformer panels including protection relays. Skills: Electrical Technician, Multi Skilled Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and alarm checks', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-MVSWGR'
+UNION ALL SELECT id, 'Thermographic inspection', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-MVSWGR'
+UNION ALL SELECT id, 'Protection relay testing and settings verification', 'semiannual', 4.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-MVSWGR'
+UNION ALL SELECT id, 'Contact resistance and insulation tests', 'annual', 6.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-MVSWGR'
+UNION ALL SELECT id, 'Full operational test and CB timing', 'annual', 4.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-MVSWGR'
+
+
+-- 2. Main LV Panel (MLV/SMDB/Cap Bank integrated)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'Main LV Panel (MLV/SMDB/Cap Bank integrated)', 'ELEC-LVMAIN', 'Main LV panel feeding risers; excludes sub-DBs. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and thermographic scan', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LVMAIN'
+UNION ALL SELECT id, 'Check busbar connections and tightness', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LVMAIN'
+UNION ALL SELECT id, 'Capacitor bank performance and power factor test', 'quarterly', 1.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LVMAIN'
+UNION ALL SELECT id, 'Insulation resistance testing', 'semiannual', 2.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LVMAIN'
+UNION ALL SELECT id, 'Full system test and protection coordination', 'annual', 4.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LVMAIN'
+
+
+-- 3. Busbar Riser / Rising Mains
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'Busbar Riser / Rising Mains', 'ELEC-BUSRISER', 'Includes tap-off boxes and thermal checks. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Thermographic inspection of tap-off boxes', 'quarterly', 2.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-BUSRISER'
+UNION ALL SELECT id, 'Tightness and connection inspection', 'semiannual', 3.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-BUSRISER'
+UNION ALL SELECT id, 'Insulation resistance and continuity test', 'annual', 4.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-BUSRISER'
+
+
+-- 4. Lightning Protection System (LPS)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'Lightning Protection System (LPS)', 'ELEC-LPS', 'Air terminals, down conductors, earth pits; annual testing required. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection of air terminals and down conductors', 'semiannual', 2.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LPS'
+UNION ALL SELECT id, 'Continuity and bonding tests', 'semiannual', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LPS'
+UNION ALL SELECT id, 'Earth pit resistance measurement', 'annual', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LPS'
+UNION ALL SELECT id, 'Full system test and certification', 'annual', 3.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-LPS'
+
+
+-- 5. Generator Synchronizing Panel
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'Generator Synchronizing Panel', 'ELEC-GENSYNC', 'Auto-synchronization, load sharing and AMF testing. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Check synchronization parameters and settings', 'quarterly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-GENSYNC'
+UNION ALL SELECT id, 'Test automatic changeover and load sharing', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-GENSYNC'
+UNION ALL SELECT id, 'AMF logic and interlock testing', 'semiannual', 3.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-GENSYNC'
+UNION ALL SELECT id, 'Full synchronization test with load transfer', 'annual', 4.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-GENSYNC'
+
+
+-- 6. UPS Battery Bank / VRLA Rack
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'UPS Battery Bank / VRLA Rack', 'ELEC-ECBATS', 'Capacity tests, impedance checks, ventilation checks. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Battery voltage and temperature checks', 'monthly', 1.0, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-ECBATS'
+UNION ALL SELECT id, 'Battery impedance testing', 'quarterly', 2.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-ECBATS'
+UNION ALL SELECT id, 'Ventilation and cooling system check', 'quarterly', 0.5, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-ECBATS'
+UNION ALL SELECT id, 'Discharge capacity test', 'annual', 4.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-ECBATS'
+
+
+-- 7. EV Charging Station
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'EV Charging Station', 'ELEC-EVCHG', 'OCPP communications, RCD/GFCI tests, cable and connector inspection. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection and connector check', 'monthly', 0.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-EVCHG'
+UNION ALL SELECT id, 'OCPP communication and display test', 'quarterly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-EVCHG'
+UNION ALL SELECT id, 'RCD/GFCI safety device testing', 'quarterly', 1.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-EVCHG'
+UNION ALL SELECT id, 'Cable insulation and earth continuity test', 'annual', 1.5, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-EVCHG'
+
+
+-- 8. Solar PV System (Inverters & Strings)
+INSERT INTO industry_standard_asset_library (category, asset_name, standard_code, description)
+VALUES ('Electrical', 'Solar PV System (Inverters & Strings)', 'ELEC-PV', 'String inspection, inverter firmware, IV-curve sampling. Skills: Electrical Technician')
+ON CONFLICT (standard_code) DO NOTHING;
+
+INSERT INTO industry_standard_ppm_tasks (asset_id, task_name, frequency, hours_per_task, task_order)
+SELECT id, 'Visual inspection of panels and connections', 'monthly', 1.5, 1 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-PV'
+UNION ALL SELECT id, 'Performance monitoring and generation analysis', 'monthly', 1.0, 2 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-PV'
+UNION ALL SELECT id, 'String voltage and current measurement', 'quarterly', 2.0, 3 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-PV'
+UNION ALL SELECT id, 'Inverter inspection and firmware update', 'semiannual', 2.0, 4 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-PV'
+UNION ALL SELECT id, 'IV curve testing and thermal imaging', 'annual', 4.0, 5 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-PV'
+UNION ALL SELECT id, 'Full system test and earth fault detection', 'annual', 3.0, 6 FROM industry_standard_asset_library WHERE standard_code = 'ELEC-PV'
